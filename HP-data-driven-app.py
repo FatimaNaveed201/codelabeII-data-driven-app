@@ -141,7 +141,7 @@ def display_books():
     
     image_references.clear() # clearing the reference image
 
-    title_width = 300  # setting a specific title width
+    title_width = 350  # setting a specific title width
     summary_width = 500  # setting a specific summary width
 
     # using for loop to print the data
