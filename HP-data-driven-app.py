@@ -11,7 +11,7 @@ def play_music():
     # Initialize Pygame Mixer
     pygame.mixer.init()
     # Load your music file
-    pygame.mixer.music.load(r'Images\audios\Harry Potter Main Theme Slowed Down (Extended 1H).mp3')
+    pygame.mixer.music.load(r'Images and Audio\Harry Potter Main Theme Slowed Down (Extended 1H).mp3')
     # Play the music, -1 for looping indefinitely
     pygame.mixer.music.play(-1)
 
@@ -141,7 +141,7 @@ def display_books():
     
     image_references.clear() # clearing the reference image
 
-    title_width = 350  # setting a specific title width
+    title_width = 320  # setting a specific title width
     summary_width = 500  # setting a specific summary width
 
     # using for loop to print the data
@@ -435,7 +435,7 @@ landing_page = Frame(root, width=1100, height=700, bg=blue_color)
 landing_page.place(x=0, y=0)
 
 # Opening and resizing the image
-img = Image.open(r'Images\audios\landing page.png')
+img = Image.open(r'Images and Audio\landing page.png')
 img = img.resize((1100, 700), Image.BOX)  # Resizing the image to fit the window without antialiasing
 
 # Creating PhotoImage object from the resized image
@@ -446,7 +446,7 @@ background_label = Label(landing_page, image=resized_background_image)
 background_label.place(relwidth=1, relheight=1)
 
 # Load the image for the "Start" button
-start_button_image = Image.open(r"Images\audios\start-button.jpeg")
+start_button_image = Image.open(r"Images and Audio\start-button.jpeg")
 start_button_image = start_button_image.resize((150, 50))  # Adjust size as needed
 start_button_photo = ImageTk.PhotoImage(start_button_image)
 
@@ -464,7 +464,7 @@ navigation_frame = Frame(app_frame, width=276, height=700, bg=blue_color)
 navigation_frame.place(x=0, y=0)
 
 # adding the logo image to the navigation bar
-img = Image.open(r"Images\audios\main logo.jpeg")
+img = Image.open(r"Images and Audio\main logo.jpeg")
 img = img.resize((250, 130))
 photo = ImageTk.PhotoImage(img)
 label = Label(navigation_frame, image=photo, borderwidth=0, highlightthickness=0)
@@ -492,7 +492,7 @@ potions_button = Button(navigation_frame, text='Potions       ', font=text_font2
 potions_button.place(x=0, y=390)
 
 # instruction page button
-instruction_button_image = Image.open(r"Images\audios\instructions button.jpeg")
+instruction_button_image = Image.open(r"Images and Audio\instructions button.jpeg")
 instruction_button_image = instruction_button_image.resize((150, 50))
 instruction_button_photo = ImageTk.PhotoImage(instruction_button_image)
 
@@ -501,12 +501,12 @@ instruction_button.image = instruction_button_photo
 instruction_button.place(x=55, y=480)
 
 # Mute music button
-mute_button_image = Image.open(r"Images\audios\mute music button.jpeg")
+mute_button_image = Image.open(r"Images and Audio\mute music button.jpeg")
 mute_button_image = mute_button_image.resize((150, 50))
 mute_button_photo = ImageTk.PhotoImage(mute_button_image)
 
 # Unmute music button
-unmute_button_image = Image.open(r"Images\audios\unmute music button.jpeg")
+unmute_button_image = Image.open(r"Images and Audio\unmute music button.jpeg")
 unmute_button_image = unmute_button_image.resize((150, 50))  # Correct resizing
 unmute_button_photo = ImageTk.PhotoImage(unmute_button_image)
 
@@ -521,14 +521,14 @@ instruction_frame = Frame(app_frame, width=824, height=701, bg=yellow_color)
 instruction_frame.place(x=276, y=0)
 
 # instruction frame image
-img = Image.open(r"Images\audios\instructions frame.png")
+img = Image.open(r"Images and Audio\instructions frame.png")
 photo = ImageTk.PhotoImage(img)
 label = Label(instruction_frame, image=photo, borderwidth=0, highlightthickness=0)
 label.image = photo  
 label.place(x=0, y=0)
 
 # PLACING THE CREDITS IMAGE ON NAVBAR
-img = Image.open(r"Images\audios\name credit.png")
+img = Image.open(r"Images and Audio\name credit.png")
 original_width, original_height = img.size
 
 # Increase image width and height
@@ -549,7 +549,7 @@ character_frame = Frame(app_frame, width=824, height=701, bg=yellow_color)
 character_frame.place(x=276, y=0)
 
 # character frame background image
-img = Image.open(r"Images\audios\characters frame.jpg")
+img = Image.open(r"Images and Audio\characters frame.jpg")
 photo = ImageTk.PhotoImage(img)
 label = Label(character_frame, image=photo, borderwidth=0, highlightthickness=0)
 label.image = photo  
@@ -565,7 +565,7 @@ search = Entry(search_border, bg='white' , fg=blue_color, borderwidth=4,
 search.place(x=3, y=3, width=494, height=54)
 
 # Button to search for a character
-search_button_image = Image.open(r"Images\audios\search-button.jpeg")
+search_button_image = Image.open(r"Images and Audio\search-button.jpeg")
 search_button_image = search_button_image.resize((150, 50))
 search_button_photo = ImageTk.PhotoImage(search_button_image)
 
@@ -636,7 +636,7 @@ books_frame = Frame(app_frame, width=824, height=701, bg=yellow_color)
 books_frame.place(x=276, y=0)
 
 # books frame background image
-img = Image.open(r"Images\audios\books frame.jpg")
+img = Image.open(r"Images and Audio\books frame.jpg")
 photo = ImageTk.PhotoImage(img)
 label = Label(books_frame, image=photo, borderwidth=0, highlightthickness=0)
 label.image = photo  
@@ -647,7 +647,7 @@ books_display_frame = Frame(books_frame, bg=yellow2_color, padx=40, pady=20)
 books_display_frame.place(x=38, y=150, width=735, height=books_display_height)
 
 # Button to get  books
-search_button_image = Image.open(r"Images\audios\books button.jpeg")
+search_button_image = Image.open(r"Images and Audio\books button.jpeg")
 search_button_image = search_button_image.resize((140, 50))
 search_button_photo = ImageTk.PhotoImage(search_button_image)
 
@@ -665,7 +665,7 @@ movies_frame = Frame(app_frame, width=824, height=701, bg=yellow_color)
 movies_frame.place(x=276, y=0)
 
 # movies frame background image
-img = Image.open(r"Images\audios\movies frame.jpg")
+img = Image.open(r"Images and Audio\movies frame.jpg")
 photo = ImageTk.PhotoImage(img)
 label = Label(movies_frame, image=photo, borderwidth=0, highlightthickness=0)
 label.image = photo  
@@ -676,7 +676,7 @@ movies_display_frame = Frame(movies_frame, bg=yellow2_color, padx=40, pady=20)
 movies_display_frame.place(x=38, y=150, width=735, height=movies_display_height)
 
 # Button to get  movies
-search_button_image = Image.open(r"Images\audios\movies button.jpeg")
+search_button_image = Image.open(r"Images and Audio\movies button.jpeg")
 search_button_image = search_button_image.resize((140, 50))
 search_button_photo = ImageTk.PhotoImage(search_button_image)
 
@@ -691,14 +691,14 @@ potions_frame = Frame(app_frame, width=824, height=701, bg=yellow_color)
 potions_frame.place(x=276, y=0)
 
 # potions frame background image
-img = Image.open(r"Images\audios\potions frame.jpg")
+img = Image.open(r"Images and Audio\potions frame.jpg")
 photo = ImageTk.PhotoImage(img)
 label = Label(potions_frame, image=photo, borderwidth=0, highlightthickness=0)
 label.image = photo  
 label.place(x=0, y=0)
 
 # Button to get  potions
-search_button_image = Image.open(r"Images\audios\potions button.jpeg")
+search_button_image = Image.open(r"Images and Audio\potions button.jpeg")
 search_button_image = search_button_image.resize((170, 70))
 search_button_photo = ImageTk.PhotoImage(search_button_image)
 
