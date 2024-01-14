@@ -347,27 +347,33 @@ def get_random_potion():
 # character data 
 # function to retrieve and update the character data based on the character the user searches for
 def search_character():
+    # Display "Retrieving Data..." message
+    status_label.config(text="Retrieving Data...")
+    root.update_idletasks()  # Force the GUI to update
+
     search_name = search.get().lower()  # Retrieve user input and convert to lowercase
 
-    # storing the api url in a variable
+    # Storing the API url in a variable
     url = "https://api.potterdb.com/v1/characters?page[number]="
 
-    # using a for loop to iterate through all 47 character api pages
-    for page in range(1, 48):  # Iterating through all 48 pagespages
+    # Using a for loop to iterate through all character API pages
+    for page in range(1, 48):
         url_search = f"{url}{page}"
         response = requests.get(url_search)
-        if response.status_code == 200: # getting the data
+        if response.status_code == 200:
             data = response.json()
             characters_list = data.get('data', [])
 
-            # LOOKING FOR THE REQUIRED CHARACTER
+            # Looking for the required character
             for character in characters_list:
                 name = character['attributes'].get('name', '').lower()
                 if search_name in name:
-                    # if the code has Found the character, updating the GUI
+                    # If the character is found, update the GUI
                     update_character_info(character)
+                    status_label.config(text="")
                     return  # Stop searching after finding the character
-        else: # error message
+
+        else:
             print(f"Failed to retrieve data from page {page}")
 
     # If no character is found
@@ -375,6 +381,7 @@ def search_character():
     character_Gender_label.config(text="")
     character_born_label.config(text="")
     character_image_label.config(image='')  # Clear previous image
+    status_label.config(text="")  # Clear the status message
 
 # function to update the character info in the gui
 def update_character_info(character):
@@ -624,6 +631,10 @@ character_born_label = Label(character_info_frame,text="", bg=yellow3_color, fg=
                         font=text_font4, justify=LEFT, wraplength=250)
 character_born_label.place(x=20, y=280, width=270)
 
+# Status Label to notify the user that the data is being retrieved
+status_label = Label(character_frame, text="", font=text_font4, bg=yellow2_color, fg=blue_color)
+status_label.place(x=330, y=205) 
+
 
 # ****************************************************************************************************
 # books Frame
@@ -748,9 +759,9 @@ potion_effect_label = Label(potions_info_frame,text="", bg=yellow3_color, fg=blu
                         font=text_font4, justify=LEFT, wraplength=250)
 potion_effect_label.place(x=20, y=220, width=250)
 
-# Status Label
+# Status Label to notify the user that the data is being retrieved
 status_label = Label(potions_frame, text="", font=text_font4, bg=yellow2_color, fg=blue_color)
-status_label.place(x=330, y=195)  # Adjust the position as needed
+status_label.place(x=330, y=195) 
 
 
 # Setting  the initial visible frame to the landing frame
