@@ -1,4 +1,4 @@
-from tkinter import *               # importing tkinter       
+from tkinter import *               # importing tkinter
 from tkinter import font            # importing fonts
 from PIL import ImageTk, Image      # importing the ImageTk and Image from PIL (python image library) to process images
 import requests                     # importing the requests library for making HTTP requests to APIs
