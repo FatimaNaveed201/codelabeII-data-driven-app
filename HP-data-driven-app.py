@@ -184,7 +184,7 @@ def display_books():
 
             print(f"Processing book {i}: {book_data['attributes']['title']}")
 
-    # Simplified content for debugging
+    # book container and canvas configuration
     books_container.config(width=800, height=container_height)  # Set a fixed width and dynamic height
     books_container.update_idletasks() # updating gui
     book_canvas.config(scrollregion=book_canvas.bbox("all")) # setting scroll region to all
@@ -193,9 +193,6 @@ def display_books():
     print("Books container size:", books_container.winfo_width(), books_container.winfo_height())
     print("Canvas scroll region:", book_canvas.cget("scrollregion"))
 
-    # updating gui again
-    books_container.update_idletasks()
-    book_canvas.config(scrollregion=book_canvas.bbox("all"))
 
 # ****************************************************************************************************************
 # movies data 
@@ -347,10 +344,6 @@ def get_random_potion():
 # character data 
 # function to retrieve and update the character data based on the character the user searches for
 def search_character():
-    # Display "Retrieving Data..." message
-    status_label.config(text="Retrieving Data...")
-    root.update_idletasks()  # Force the GUI to update
-
     search_name = search.get().lower()  # Retrieve user input and convert to lowercase
 
     # Storing the API url in a variable
@@ -370,7 +363,6 @@ def search_character():
                 if search_name in name:
                     # If the character is found, update the GUI
                     update_character_info(character)
-                    status_label.config(text="")
                     return  # Stop searching after finding the character
 
         else:
